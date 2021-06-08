@@ -11,7 +11,7 @@
   list-style: none;
 }
 
-.header__nav-item {
+.header__list-item {
   width: 70px;
 
   a {
@@ -44,4 +44,11 @@
 .header__title {
   font-size: 1.5rem;
   text-transform: capitalize;
+}
+
+.header__auth-bar {
+  display: flex;
+  height: 2.5rem;
+  list-style: none;
+  margin: 0;
 }
