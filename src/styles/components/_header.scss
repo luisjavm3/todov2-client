@@ -31,7 +31,17 @@
   }
 }
 
-.header__view-name {
-  flex-grow: 1;
-  text-align: center;
+.header__title-bar {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &.wrapper {
+    flex-grow: 1;
+  }
+}
+
+.header__title {
+  font-size: 1.5rem;
+  text-transform: capitalize;
 }

@@ -13,7 +13,11 @@ const Header = () => {
           </li>
         </ul>
 
-        <div className="header__view-name">View Title</div>
+        <div className="header__title-bar wrapper">
+          <div className="header__title-bar">
+            <span className="header__title">view title</span>
+          </div>
+        </div>
 
         <div className="header__auth-bar">Log</div>
       </div>
