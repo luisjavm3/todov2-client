@@ -1,1 +1,22 @@
 @import './variables';
+
+// Components
+@import './components/header';
+
+body {
+  margin: 0;
+}
+
+.frame {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  &--padding {
+    padding: 0 8px;
+  }
+
+  &--flex {
+    display: flex;
+  }
+}
