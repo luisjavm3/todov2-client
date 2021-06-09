@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Paper = ({ children, width = '500px', height = '400px' }) => {
+const Paper = ({ children, maxWidth = '500px', minHeight = '500px' }) => {
   return (
-    <div className="paper" style={{ width: width, height: height }}>
+    <div className="paper" style={{ maxWidth: maxWidth, minHeight: minHeight }}>
       {children}
     </div>
   );
