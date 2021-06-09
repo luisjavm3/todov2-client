@@ -1,12 +1,37 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
-import React from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import Signup from '../views/Signup';
+import Login from '../views/Login';
+import ProtectedRoute from './ProtectedRoute';
+import PrivateAppRoutes from './PrivateAppRoutes';
 
 const AppRouter = () => {
+  //   const isAuthenticated = useSelector((state) => state.isAuthenticaded);
+  //   const isAuthenticated = false;
+  const isAuthenticated = true;
+
   return (
     <BrowserRouter>
       <div>
-        <Switch></Switch>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() =>
+              isAuthenticated ? (
+                <Redirect to="/app" />
+              ) : (
+                <Redirect to="/login" />
+              )
+            }
+          />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <ProtectedRoute
+            path="/app"
+            component={PrivateAppRoutes}
+            isAuthenticated={isAuthenticated}
+          />
+        </Switch>
       </div>
     </BrowserRouter>
   );
