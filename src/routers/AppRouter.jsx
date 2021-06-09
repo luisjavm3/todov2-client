@@ -10,8 +10,8 @@ import PrivateAppRoutes from './PrivateAppRoutes';
 
 const AppRouter = () => {
   //   const isAuthenticated = useSelector((state) => state.isAuthenticaded);
-  const isAuthenticated = false;
-  // const isAuthenticated = true;
+  // const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return (
     <BrowserRouter>

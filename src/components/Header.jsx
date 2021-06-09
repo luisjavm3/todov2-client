@@ -1,7 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+  let location = useLocation();
+
+  useEffect(() => {
+    console.log(location.pathname);
+  }, [location]);
+
+  const getTitle = () => {
+    switch (location.pathname) {
+      case '/':
+        return 'Welcome';
+
+      case '/app':
+        break;
+
+      default:
+        return '__Unknown title__';
+    }
+  };
+
   return (
     <header className="header">
       <div className="frame frame--flex">
@@ -15,7 +34,7 @@ const Header = () => {
         </ul>
 
         <div className="header__title-bar">
-          <span className="header__title">view title</span>
+          <span className="header__title">{getTitle()}</span>
         </div>
 
         <ul className="header__auth-bar">
