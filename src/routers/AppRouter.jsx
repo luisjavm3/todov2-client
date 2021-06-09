@@ -1,6 +1,9 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+
 import Signup from '../views/Signup';
 import Login from '../views/Login';
+import Error404 from '../views/Error404';
+
 import ProtectedRoute from './ProtectedRoute';
 import PrivateAppRoutes from './PrivateAppRoutes';
 
@@ -31,6 +34,7 @@ const AppRouter = () => {
             component={PrivateAppRoutes}
             isAuthenticated={isAuthenticated}
           />
+          <Route path="*" component={Error404} />
         </Switch>
       </div>
     </BrowserRouter>

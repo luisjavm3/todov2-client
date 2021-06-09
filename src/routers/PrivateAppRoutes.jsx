@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Redirect, Route, Switch } from 'react-router';
 
 import Header from '../components/Header';
 import Todos from '../views/Todos';
@@ -15,6 +15,7 @@ const PrivateAppRoutes = () => {
           <Route exact path="/app" component={Todos} />
           <Route exact path="/app/userdetails" component={UserDetails} />
           <Route exact path="/app/userslist" component={UsersList} />
+          <Route path="*" render={() => <Redirect to="/" />} />
         </Switch>
       </div>
     </React.Fragment>
