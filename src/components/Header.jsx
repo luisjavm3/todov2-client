@@ -6,10 +6,10 @@ const Header = () => {
       <div className="frame frame--flex">
         <ul className="header__nav">
           <li className="header__list-item">
-            <a href>home</a>
+            <a href="any">home</a>
           </li>
           <li className="header__list-item">
-            <a href>users</a>
+            <a href="any">users</a>
           </li>
         </ul>
 
@@ -19,13 +19,13 @@ const Header = () => {
 
         <ul className="header__auth-bar">
           <li className="header__list-item">
-            <a href>signup</a>
+            <a href="any">signup</a>
           </li>
           <li className="header__list-item">
-            <a href>login</a>
+            <a href="any">login</a>
           </li>
           <li className="header__list-item">
-            <a href>logout</a>
+            <a href="any">logout</a>
           </li>
         </ul>
       </div>

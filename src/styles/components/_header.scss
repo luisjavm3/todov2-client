@@ -21,11 +21,13 @@
   width: 70px;
 
   a {
-    display: flex;
     align-items: center;
+    color: white;
+    display: flex;
     font-weight: 100;
     height: 100%;
     justify-content: center;
+    text-decoration: none;
     text-transform: capitalize;
     width: 100%;
   }
