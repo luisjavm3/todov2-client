@@ -2,8 +2,8 @@ import React from 'react';
 
 const Login = () => {
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="login">
+      <div className="frame frame--padding"></div>
     </div>
   );
 };
