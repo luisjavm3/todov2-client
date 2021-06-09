@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -19,10 +20,10 @@ const Header = () => {
 
         <ul className="header__auth-bar">
           <li className="header__list-item">
-            <a href="any">signup</a>
+            <Link to="/signup">signup</Link>
           </li>
           <li className="header__list-item">
-            <a href="any">login</a>
+            <Link to="/login">login</Link>
           </li>
           <li className="header__list-item">
             <a href="any">logout</a>

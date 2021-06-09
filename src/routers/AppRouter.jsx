@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
+import Welcome from '../views/Welcome';
 import Signup from '../views/Signup';
 import Login from '../views/Login';
 import Error404 from '../views/Error404';
@@ -9,8 +10,8 @@ import PrivateAppRoutes from './PrivateAppRoutes';
 
 const AppRouter = () => {
   //   const isAuthenticated = useSelector((state) => state.isAuthenticaded);
-  //   const isAuthenticated = false;
-  const isAuthenticated = true;
+  const isAuthenticated = false;
+  // const isAuthenticated = true;
 
   return (
     <BrowserRouter>
@@ -20,11 +21,7 @@ const AppRouter = () => {
             exact
             path="/"
             render={() =>
-              isAuthenticated ? (
-                <Redirect to="/app" />
-              ) : (
-                <Redirect to="/login" />
-              )
+              isAuthenticated ? <Redirect to="/app" /> : <Welcome />
             }
           />
           <Route exact path="/login" component={Login} />
