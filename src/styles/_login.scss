@@ -1,14 +1,38 @@
 .login {
   & > .frame.frame--padding {
     min-height: 100vh;
+    position: relative;
   }
 }
 
-.login__paper {
-  // display: inline-block;
-  margin: 0 auto;
+.login__paper-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .login__title {
   text-align: center;
+}
+
+.login__form-group {
+  margin-top: 1rem;
+
+  button {
+    background-color: $btn-action-color;
+    text-transform: capitalize;
+    width: 100%;
+  }
+}
+
+.login__form-control {
+  input {
+    box-sizing: border-box;
+    min-width: 320px;
+  }
+
+  label {
+    text-transform: capitalize;
+  }
 }
