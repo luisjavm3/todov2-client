@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { logIn } from '../redux/actions/userActions';
+import { logIn } from '../redux/actions/authActions';
 import Paper from '../components/Paper';
 
 const Login = () => {
@@ -12,7 +12,11 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    dispatch(logIn({ username, password }));
+    if (username && password) {
+      dispatch(logIn({ username, password }));
+    } else {
+      console.warn('Insert Username and Password');
+    }
   };
 
   const handleUsernameChange = (e) => {

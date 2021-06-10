@@ -1,6 +1,6 @@
 import { LOGIN, SIGNUP } from '../actionTypes';
 
-const user = (state = null, action) => {
+const token = (state = null, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -8,11 +8,11 @@ const user = (state = null, action) => {
       break;
 
     case LOGIN:
-      break;
+      return payload.token;
 
     default:
       return state;
   }
 };
 
-export default user;
+export default token;
