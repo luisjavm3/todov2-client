@@ -1,11 +1,26 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { logIn } from '../redux/actions/userActions';
 import Paper from '../components/Paper';
 
 const Login = () => {
   const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    dispatch(logIn({ username, password }));
+  };
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
   return (
@@ -21,7 +36,12 @@ const Login = () => {
                   <label htmlFor="username">username</label>
                 </div>
                 <div className="login__form-control">
-                  <input type="text" id="username" />
+                  <input
+                    type="text"
+                    id="username"
+                    autoComplete="off"
+                    onChange={(e) => handleUsernameChange(e)}
+                  />
                 </div>
               </div>
 
@@ -30,7 +50,12 @@ const Login = () => {
                   <label htmlFor="password">password</label>
                 </div>
                 <div className="login__form-control">
-                  <input type="password" id="password" />
+                  <input
+                    type="password"
+                    id="password"
+                    autoComplete="off"
+                    onChange={(e) => handlePasswordChange(e)}
+                  />
                 </div>
               </div>
 
