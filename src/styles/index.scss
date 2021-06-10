@@ -1,9 +1,9 @@
 @import './variables';
-@import './views/login';
-@import './components/paper';
+@import './login';
+@import './paper';
 
 // Components
-@import './components/header';
+@import './header';
 
 body {
   font-family: 'Roboto', sans-serif;
