@@ -57,9 +57,11 @@ const Header = () => {
 
           {(() => {
             if (isAuthenticated) {
-              <li className="header__list-item">
-                <a href="any">logout</a>
-              </li>;
+              return (
+                <li className="header__list-item">
+                  <a href="any">logout</a>
+                </li>
+              );
             }
           })()}
         </ul>
