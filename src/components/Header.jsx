@@ -1,14 +1,21 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
+import { logOut } from '../redux/actions/authActions';
 
 const Header = () => {
   let location = useLocation();
+  let dispatch = useDispatch();
   const isAuthenticated = useSelector(
     (state) => state.authData.isAuthenticated
   );
 
   useEffect(() => {}, [location]);
+
+  const handleLogout = () => {
+    dispatch(logOut());
+  };
 
   const getTitle = () => {
     switch (location.pathname) {
@@ -59,8 +66,12 @@ const Header = () => {
             if (isAuthenticated) {
               return (
                 <li className="header__list-item">
-                  <button className="header__logout-button">logout</button>
-                  {/* <a href="any">logout</a> */}
+                  <button
+                    className="header__logout-button"
+                    onClick={() => handleLogout()}
+                  >
+                    logout
+                  </button>
                 </li>
               );
             }

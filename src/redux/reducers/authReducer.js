@@ -1,4 +1,4 @@
-import { LOGIN, SIGNUP } from '../actionTypes';
+import { LOGIN, LOGOUT, SIGNUP } from '../actionTypes';
 
 const authData = (state = { token: null, isAuthenticated: false }, action) => {
   const { type, payload } = action;
@@ -9,6 +9,10 @@ const authData = (state = { token: null, isAuthenticated: false }, action) => {
 
     case LOGIN:
       return { token: payload.token, isAuthenticated: payload.success };
+
+    case LOGOUT:
+      console.log('logOut reducer');
+      return { token: null, isAuthenticated: false };
 
     default:
       return state;

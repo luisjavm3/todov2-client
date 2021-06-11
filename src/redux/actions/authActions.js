@@ -1,5 +1,5 @@
 import * as API from '../../api/AuthAPI';
-import { LOGIN } from '../actionTypes';
+import { LOGIN, LOGOUT } from '../actionTypes';
 
 export const signUp = (usernameAndPassword) => async (dispatch) => {};
 
@@ -12,4 +12,8 @@ export const logIn = (usernameAndPassword) => async (dispatch) => {
     console.log(`Error: Bad request!`);
     dispatch({ type: LOGIN, payload: { token: null, success: false } });
   }
+};
+
+export const logOut = () => (dispatch) => {
+  dispatch({ type: LOGOUT });
 };
