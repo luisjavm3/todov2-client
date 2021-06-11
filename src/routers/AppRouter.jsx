@@ -7,11 +7,13 @@ import Error404 from '../views/Error404';
 
 import ProtectedRoute from './ProtectedRoute';
 import PrivateAppRoutes from './PrivateAppRoutes';
+import { useSelector } from 'react-redux';
 
 const AppRouter = () => {
-  //   const isAuthenticated = useSelector((state) => state.isAuthenticaded);
-  // const isAuthenticated = false;
-  const isAuthenticated = true;
+  const isAuthenticated = useSelector(
+    (state) => state.authData.isAuthenticated
+  );
+  console.log(`isAuthenticated: ${isAuthenticated}`);
 
   return (
     <BrowserRouter>

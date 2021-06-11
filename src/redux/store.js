@@ -1,9 +1,9 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
-import token from './reducers/authReducer';
+import authData from './reducers/authReducer';
 
-const reducer = combineReducers({ token });
+const reducer = combineReducers({ authData });
 
 const store = createStore(reducer, compose(applyMiddleware(thunk)));
 

@@ -1,6 +1,6 @@
 import { LOGIN, SIGNUP } from '../actionTypes';
 
-const token = (state = null, action) => {
+const authData = (state = { token: null, isAuthenticated: false }, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -8,11 +8,12 @@ const token = (state = null, action) => {
       break;
 
     case LOGIN:
-      return payload.token;
+      console.log(payload);
+      return { token: payload.token, isAuthenticated: payload.success };
 
     default:
       return state;
   }
 };
 
-export default token;
+export default authData;

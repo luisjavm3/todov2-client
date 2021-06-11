@@ -4,9 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Header = () => {
   let location = useLocation();
 
-  useEffect(() => {
-    console.log(location.pathname);
-  }, [location]);
+  useEffect(() => {}, [location]);
 
   const getTitle = () => {
     switch (location.pathname) {

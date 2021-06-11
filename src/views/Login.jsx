@@ -3,11 +3,13 @@ import { useDispatch } from 'react-redux';
 
 import { logIn } from '../redux/actions/authActions';
 import Paper from '../components/Paper';
+import { useHistory } from 'react-router';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  let history = useHistory();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -17,6 +19,8 @@ const Login = () => {
     } else {
       console.warn('Insert Username and Password');
     }
+
+    history.push('/app');
   };
 
   const handleUsernameChange = (e) => {
