@@ -20,8 +20,11 @@
 .header__list-item {
   width: 70px;
 
-  a {
+  a,
+  .header__logout-button {
     align-items: center;
+    background-color: $header-bg-color;
+    border: none;
     color: white;
     display: flex;
     font-weight: 100;
@@ -32,7 +35,8 @@
     width: 100%;
   }
 
-  a:hover {
+  a:hover,
+  .header__logout-button:hover {
     background-color: $lighten-header-bg-color;
     cursor: pointer;
     font-weight: 500;

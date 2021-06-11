@@ -59,7 +59,8 @@ const Header = () => {
             if (isAuthenticated) {
               return (
                 <li className="header__list-item">
-                  <a href="any">logout</a>
+                  <button className="header__logout-button">logout</button>
+                  {/* <a href="any">logout</a> */}
                 </li>
               );
             }
