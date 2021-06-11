@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   let location = useLocation();
+  const isAuthenticated = useSelector(
+    (state) => state.authData.isAuthenticated
+  );
 
   useEffect(() => {}, [location]);
 
@@ -24,7 +28,7 @@ const Header = () => {
       <div className="frame frame--flex">
         <ul className="header__nav">
           <li className="header__list-item">
-            <a href="any">home</a>
+            <Link to="/">home</Link>
           </li>
           <li className="header__list-item">
             <a href="any">users</a>
@@ -36,15 +40,28 @@ const Header = () => {
         </div>
 
         <ul className="header__auth-bar">
-          <li className="header__list-item">
-            <Link to="/signup">signup</Link>
-          </li>
-          <li className="header__list-item">
-            <Link to="/login">login</Link>
-          </li>
-          <li className="header__list-item">
-            <a href="any">logout</a>
-          </li>
+          {(() => {
+            if (!isAuthenticated) {
+              return (
+                <React.Fragment>
+                  <li className="header__list-item">
+                    <Link to="/signup">signup</Link>
+                  </li>
+                  <li className="header__list-item">
+                    <Link to="/login">login</Link>
+                  </li>
+                </React.Fragment>
+              );
+            }
+          })()}
+
+          {(() => {
+            if (isAuthenticated) {
+              <li className="header__list-item">
+                <a href="any">logout</a>
+              </li>;
+            }
+          })()}
         </ul>
       </div>
     </header>
