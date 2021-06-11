@@ -1,4 +1,3 @@
-import { useHistory } from 'react-router-dom';
 import * as API from '../../api/AuthAPI';
 import { LOGIN } from '../actionTypes';
 

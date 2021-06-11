@@ -13,7 +13,6 @@ const AppRouter = () => {
   const isAuthenticated = useSelector(
     (state) => state.authData.isAuthenticated
   );
-  console.log(`isAuthenticated: ${isAuthenticated}`);
 
   return (
     <BrowserRouter>
