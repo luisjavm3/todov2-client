@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom';
 import * as API from '../../api/AuthAPI';
 import { LOGIN } from '../actionTypes';
 
@@ -10,5 +11,6 @@ export const logIn = (usernameAndPassword) => async (dispatch) => {
     dispatch({ type: LOGIN, payload });
   } catch (error) {
     console.log(`Error: Bad request!`);
+    dispatch({ type: LOGIN, payload: { token: null, success: false } });
   }
 };

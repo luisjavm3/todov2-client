@@ -15,12 +15,16 @@ const Login = () => {
     e.preventDefault();
 
     if (username && password) {
-      dispatch(logIn({ username, password }));
+      dispatch(logIn({ username, password }))
+        .then(() => {
+          history.push('/app');
+        })
+        .catch(() => {
+          console.log(`Error in the dispatch.`);
+        });
     } else {
       console.warn('Insert Username and Password');
     }
-
-    history.push('/app');
   };
 
   const handleUsernameChange = (e) => {

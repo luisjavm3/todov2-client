@@ -8,7 +8,6 @@ const authData = (state = { token: null, isAuthenticated: false }, action) => {
       break;
 
     case LOGIN:
-      console.log(payload);
       return { token: payload.token, isAuthenticated: payload.success };
 
     default:
