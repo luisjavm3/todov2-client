@@ -1,20 +1,32 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { getAllTodos } from '../redux/actions/todoActions.js';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import * as api from '../api/TodoApi.js';
 
 const Todos = () => {
-  const dispatch = useDispatch();
   const token = useSelector((state) => state.authData.token);
+  const [todos, setTodos] = useState('');
 
   useEffect(() => {
-    dispatch(getAllTodos(token));
-  });
+    const foo = async () => {
+      const bar = await api.getAllTodos(token);
+      setTodos(bar.data.content);
+    };
+
+    foo();
+  }, [token]);
 
   return (
     <div>
       <h1>Todos</h1>
       <hr />
+
+      <ul>
+        {(() => {
+          if (todos) {
+            return todos.map((item, index) => <li key={index}>{item.name}</li>);
+          }
+        })()}
+      </ul>
     </div>
   );
 };
