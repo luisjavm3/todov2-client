@@ -11,7 +11,6 @@ const authData = (state = { token: null, isAuthenticated: false }, action) => {
       return { token: payload.token, isAuthenticated: payload.success };
 
     case LOGOUT:
-      console.log('logOut reducer');
       return { token: null, isAuthenticated: false };
 
     default:
