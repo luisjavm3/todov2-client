@@ -5,7 +5,7 @@ const authData = (state = { token: null, isAuthenticated: false }, action) => {
 
   switch (type) {
     case SIGNUP:
-      break;
+      return { token: payload.token, isAuthenticated: payload.success };
 
     case LOGIN:
       return { token: payload.token, isAuthenticated: payload.success };
