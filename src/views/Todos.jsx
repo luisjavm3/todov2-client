@@ -16,11 +16,16 @@ const Todos = () => {
   });
 
   return (
-    <div>
-      <h1>Todos</h1>
-      <hr />
+    <div className="todos">
+      <div className="search-bar-wrapper">
+        <div className="search-bar">
+          <input type="text" className="search-bar__input" />
+          <button className="search-bar__create-btn">create</button>
+          <button className="search-bar__search-btn">search</button>
+        </div>
+      </div>
 
-      <ul>
+      <ul className="todos-container">
         {(() => {
           if (todos) {
             return todos.map((item, index) => <li key={index}>{item.name}</li>);

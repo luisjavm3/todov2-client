@@ -1,0 +1,34 @@
+.search-bar-wrapper {
+  background-color: $paper-bg-color;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.search-bar {
+  align-items: center;
+  display: flex;
+  height: 70px;
+  justify-content: space-around;
+  margin: 1.5rem 0;
+}
+
+.search-bar__input {
+  width: 230px;
+}
+
+.search-bar__create-btn {
+  background-color: $btn-create-color;
+  text-transform: capitalize;
+}
+
+.search-bar__search-btn {
+  background-color: $btn-action-color;
+  text-transform: capitalize;
+}
+
+.todos-container {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 400px;
+}
