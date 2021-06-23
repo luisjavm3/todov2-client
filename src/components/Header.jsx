@@ -37,9 +37,11 @@ const Header = () => {
           <li className="header__list-item">
             <Link to="/">home</Link>
           </li>
-          <li className="header__list-item">
-            <a href="any">users</a>
-          </li>
+          {isAuthenticated && (
+            <li className="header__list-item">
+              <a href="any">users</a>
+            </li>
+          )}
         </ul>
 
         <div className="header__title-bar">

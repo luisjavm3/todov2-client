@@ -6,14 +6,14 @@ const Todos = () => {
   const token = useSelector((state) => state.authData.token);
   const [todos, setTodos] = useState('');
 
-  useEffect(() => {
-    const foo = async () => {
-      const bar = await api.getAllTodos(token);
-      setTodos(bar.data.content);
-    };
+  const foo = async () => {
+    const bar = await api.getAllTodos(token);
+    setTodos(bar.data.content);
+  };
 
+  useEffect(() => {
     foo();
-  }, [token]);
+  });
 
   return (
     <div>
