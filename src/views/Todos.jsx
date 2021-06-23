@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import * as api from '../api/TodoApi.js';
+import Todo from '../components/Todo.jsx';
 
 const Todos = () => {
   const token = useSelector((state) => state.authData.token);
@@ -28,7 +29,7 @@ const Todos = () => {
       <ul className="todos-container">
         {(() => {
           if (todos) {
-            return todos.map((item, index) => <li key={index}>{item.name}</li>);
+            return todos.map((item, index) => <Todo name={item.name} />);
           }
         })()}
       </ul>
