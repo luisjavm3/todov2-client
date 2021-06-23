@@ -4,7 +4,6 @@ import { LOGIN, LOGOUT, SIGNUP } from '../actionTypes';
 export const signUp = (usernameAndPassword) => async (dispatch) => {
   try {
     const { data } = await API.signUp(usernameAndPassword);
-    console.log(data);
     dispatch({ type: SIGNUP, payload: data });
   } catch (error) {
     console.log(`Error: Bad request!`);
