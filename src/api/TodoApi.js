@@ -12,3 +12,9 @@ export const createTodo = async (token, todo) => {
 
   return await axios.post(`${API_URL}/todos`, todo, { headers });
 };
+
+export const deleteTodo = async (token, todoId) => {
+  const headers = { Authorization: `Bearer ${token}` };
+
+  return await axios.delete(`${API_URL}/todos/${todoId}`, { headers });
+};

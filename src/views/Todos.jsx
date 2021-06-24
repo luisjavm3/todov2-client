@@ -30,9 +30,13 @@ const Todos = () => {
       return;
     }
 
-    dispatch(createTodo(token, { name: searchTerm })).then((foo) => {
-      history.push('/');
-    });
+    dispatch(createTodo(token, { name: searchTerm }))
+      .then((foo) => {
+        history.push('/');
+      })
+      .catch(() => {
+        console.log(`Error in the dispatch.`);
+      });
   };
 
   useEffect(() => {
@@ -63,11 +67,14 @@ const Todos = () => {
       <ul className="todos-container">
         {(() => {
           if (todos) {
-            return todos.map((item, index) => (
+            return todos.map((item) => (
               <Todo
-                key={index}
+                key={item._id}
+                _id={item._id}
                 name={item.name}
                 username={item?.user?.username}
+                dispatch={dispatch}
+                token={token}
               />
             ));
           }
