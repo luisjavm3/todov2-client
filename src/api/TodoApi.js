@@ -6,3 +6,9 @@ export const getAllTodos = async (token) => {
     headers: { Authorization: `Bearer ${token}` },
   });
 };
+
+export const createTodo = async (token, todo) => {
+  const headers = { Authorization: `Bearer ${token}` };
+
+  return await axios.post(`${API_URL}/todos`, todo, { headers });
+};

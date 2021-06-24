@@ -1,12 +1,33 @@
 .todo {
+  align-items: center;
   background-color: #575a76;
+  display: flex;
+  height: 30px;
   margin-top: 8px;
+}
+
+.todo__name {
+  color: white;
+  padding: 0 3px;
+  text-transform: capitalize;
+}
+
+.todo__username {
+  color: white;
+  font-weight: 100;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.todo__btn-container {
 }
 
 .todo__update {
   background-color: $btn-update-color;
+  text-transform: capitalize;
 }
 
 .todo__remove {
   background-color: $btn-delete-color;
+  text-transform: capitalize;
 }

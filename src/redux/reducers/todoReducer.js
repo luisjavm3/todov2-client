@@ -1,4 +1,4 @@
-import { GET_ALL_TODOS } from '../actionTypes.js';
+import { CREATE_TODO, GET_ALL_TODOS } from '../actionTypes.js';
 
 const todos = (state = null, action) => {
   const { type, payload } = action;
@@ -7,6 +7,9 @@ const todos = (state = null, action) => {
     case GET_ALL_TODOS:
       console.log(payload);
       return payload;
+
+    case CREATE_TODO:
+      return { ...state, payload };
 
     default:
       return state;
